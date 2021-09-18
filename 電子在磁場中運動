@@ -1,3 +1,21 @@
+"""
+2021.7.20 
+ 帶電粒子在磁場中的運動
+"""
+from vpython import *
+
+"""
+ 1. 參數設定
+    1、theta=0,phi=0：速度只有X分量，沿X軸等速度運動
+    2、(theta,phi)=(90,0)、(0,90)：速度沒有X分量，在yz平面上坐等速度運動
+    3、速度與X軸夾角=0or180：hea=80/100,phi=80：螺線運動
+    """
+size, m, q = 0.005, 1E-10, 1E-9 # 粒子半徑, 質量, 電量
+theta = radians(80)            # 粒子初速度與 xy 平面夾角
+phi = radians(40)              # 粒子初速度在 xy 平面投影與 x 軸夾角
+v0 = 10*vec(cos(theta)*cos(phi), cos(theta)*sin(phi), sin(theta))  # 粒子初速度
+L = 0.4                      # 坐標軸長度
+B_field = vec(10, 0, 0)      # 磁場
 t, dt = 0, 1E-5              # 時間, 時間間隔
 
 """
